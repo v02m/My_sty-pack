@@ -1,0 +1,94 @@
+% =========================================
+% ⚙️ СПЕЦИФИЧНЫЕ НАСТРОЙКИ ДЛЯ BEAMER
+% =========================================
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mysetup-beamer}[2025/04/24 Beamer specific setup by Valery]
+
+% --- Темы ---
+\usetheme{Warsaw}
+\useinnertheme{rectangles}
+\usecolortheme{structure}
+
+% --- Эффекты прозрачности ---
+\setbeamercovered{invisible}
+% \setbeamercovered{transparent} % Делает покрытый текст полупрозрачным
+% \setbeamercovered{dynamic} % Постепенное появление покрытого текста
+% \setbeamercovered{highly dynamic} % Более выраженное постепенное появление
+
+% --- Размеры полей ---
+\setbeamersize{text margin left=2em,text margin right=2em}
+% \setbeamersize{sidebar width left=2cm}
+
+% --- Разделы/подразделы в содержании ---
+\setbeamertemplate{sections/subsections in toc}[square]
+% \setbeamertemplate{sections/subsections in toc}[circle]
+% \setbeamertemplate{sections/subsections in toc}[ball]
+
+% --- Элементы itemize ---
+\setbeamertemplate{itemize items}[triangle]
+% \setbeamertemplate{itemize items}[circle]
+% \setbeamertemplate{itemize items}[square]
+% \setbeamertemplate{itemize items}[ball]
+
+% --- Элементы enumerate ---
+\setbeamertemplate{enumerate items}[square]
+% \setbeamertemplate{enumerate items}[circle]
+% \setbeamertemplate{enumerate items}[ball]
+
+% --- Блоки ---
+\setbeamertemplate{blocks}[rounded][shadow=true]
+% \setbeamertemplate{blocks}[default]
+% \setbeamertemplate{blocks}[rounded][shadow=false]
+
+% --- Мини-кадры навигации ---
+\setbeamertemplate{mini frames}[box]
+% \setbeamertemplate{mini frames}[default]
+% \setbeamertemplate{mini frames}[tick]
+
+% --- Символы навигации ---
+\setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{navigation symbols}[horizontal]
+% \setbeamertemplate{navigation symbols}[vertical]
+% \setbeamertemplate{navigation symbols}[only frame symbol]
+
+% --- Верхний колонтитул ---
+% \setbeamertemplate{headline}[default]
+% \setbeamertemplate{headline}[infolines theme]
+% \setbeamertemplate{headline}[miniframes theme]
+% \setbeamertemplate{headline}[sidebar theme]
+% \setbeamertemplate{headline}[smoothtree theme]
+% \setbeamertemplate{headline}[smoothbars theme]
+% \setbeamertemplate{headline}[tree]
+% \setbeamertemplate{headline}[split theme]
+
+% --- Нижний колонтитул ---
+% \setbeamertemplate{footline}[default]
+% \setbeamertemplate{footline}[infolines theme]
+% \setbeamertemplate{footline}[miniframes theme]
+% \setbeamertemplate{footline}[page number]
+% \setbeamertemplate{footline}[frame number]
+% \setbeamertemplate{footline}[split]
+
+% --- Заголовок фрейма ---
+% \setbeamertemplate{frametitle}[default][left]
+% \setbeamertemplate{frametitle}[shadow theme]
+% \setbeamertemplate{frametitle}[sidebar theme]
+% \setbeamertemplate{frametitle}[smoothbars theme]
+% \setbeamertemplate{frametitle}[smoothtree theme]
+
+% --- Фон ---
+% \setbeamertemplate{background canvas}[vertical shading][top=blue!10,bottom=white]
+% \setbeamertemplate{background}[grid][step=1cm]
+
+% --- Шрифты ---
+% \usefonttheme{serif}
+% \setbeamerfont{title}{family=\sffamily, size=\Huge, series=\bfseries}
+
+% --- Цвета ---
+% \usecolortheme[named=NavyBlue]{structure}
+% \setbeamercolor{title}{fg=red}
+
+% Здесь вы можете добавить любые другие специфичные настройки для beamer.
+
+\endinput

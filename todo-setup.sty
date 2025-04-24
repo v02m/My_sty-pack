@@ -1,0 +1,33 @@
+% ===========================
+% 🗒️ ЗАМЕТКИ И ПРИМЕЧАНИЯ
+% ===========================
+
+\ProvidesPackage{todo-setup}[2025/04/21 Inline TODOs and task notes]
+
+% Подключение пакета todonotes
+\RequirePackage[
+colorinlistoftodos,     % Цветовая маркировка в списке задач
+prependcaption,         % Подпись перед заметкой
+textsize=tiny           % Размер текста в заметке
+]{todonotes}
+
+% --- Пользовательские команды ---
+\newcommand{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommand{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommand{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommand{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommand{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+
+% --- Inline-варианты ---
+\long\def\intodo#1{\todo[inline]{#1}}
+\long\def\todoin#1{\todo[inline]{#1}}
+
+% --- Список задач на отдельной странице ---
+\newcommand{\Заметки}{\newpage\listoftodos[Заметки]\newpage}
+\newcommand{\Отр}{\todoin{Отработано}}
+
+% 📌 Примечания:
+% - Вы можете писать \unsure{Это точно?}, \change{Нужно переписать} и т.п.
+% - Команды позволяют гибко маркировать блоки прямо в тексте.
+% - \
+%Теперь блок заметок изолирован, и его легко отключать/подключать в зависимости от режима (final или draft).

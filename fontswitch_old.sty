@@ -1,0 +1,89 @@
+%% ===========================
+%% ⬛ УПРАВЛЕНИЕ ШРИФТАМИ
+%% ===========================
+%\ProvidesPackage{fontswitch}[2025/04/21 Custom font settings]
+%
+%\RequirePackage{fontspec}  % Пакет для работы с системными шрифтами
+%\RequirePackage{polyglossia} % Языковая поддержка для XeLaTeX и LuaLaTeX
+%\RequirePackage{iftex}
+%\RequirePackage{etoolbox}
+%
+%% Настройка основного шрифта
+%\setmainfont[
+%Ligatures=TeX,  % Используем стандартные лигатуры и символы TeX
+%BoldFont=Times New Roman Bold,
+%ItalicFont=Times New Roman Italic,
+%BoldItalicFont=Times New Roman Bold Italic
+%]{Times New Roman}
+%
+%% Шрифт без засечек (Arial)
+%\setsansfont{Arial}
+%
+%% Моноширинный шрифт (Courier New)
+%\setmonofont[
+%Scale=MatchLowercase,  % Подгоняем размер шрифта по строчным буквам
+%ItalicFont=Courier New Italic,
+%BoldFont=Courier New Bold
+%]{Courier New}
+%
+%% Примечание:
+%% В данной настройке, для каждого шрифта установлены их альтернативы (жирный, курсив и т.д.), которые используются
+%% для различных команд (например, \textbf{} или \textit{}).
+%
+%%Пояснение:
+%%%\setmainfont, \setsansfont, и \setmonofont — это основные команды для настройки шрифтов.
+%%%Шрифт основного текста: Times New Roman — задаём семейство шрифтов и альтернативы для жирного и курсивного начертаний.
+%%%Шрифт без засечек: используем Arial.
+%%%Моноширинный шрифт: это Courier New с дополнительной настройкой для разных стилей.
+%
+%
+%% Языки
+%\setmainlanguage[babelshorthands=true]{russian}
+%\setotherlanguage{english}
+%
+%% Параметры шрифта (1=MS, 2=Liberation, 0=CMU)
+%\newcounter{fontfamily}
+%\setcounter{fontfamily}{1} % <== измените на 0 или 2 при необходимости
+%
+%% Если xelatex или lualatex
+%\ifXeTeX
+%\IfFontExistsTF{Times New Roman}{}{\setcounter{fontfamily}{0}}
+%\IfFontExistsTF{LiberationSerif}{}{\setcounter{fontfamily}{0}}
+%\fi
+%\ifLuaTeX
+%\IfFontExistsTF{Times New Roman}{}{\setcounter{fontfamily}{0}}
+%\IfFontExistsTF{LiberationSerif}{}{\setcounter{fontfamily}{0}}
+%\fi
+%
+%% Fallback (0) — CMU
+%\ifnumequal{\value{fontfamily}}{0}{
+%	\setmonofont{CMU Typewriter Text}
+%	\newfontfamily\cyrillicfonttt{CMU Typewriter Text}
+%	\defaultfontfeatures{Ligatures=TeX}
+%	\setmainfont{CMU Serif}
+%	\newfontfamily\cyrillicfont{CMU Serif}
+%	\setsansfont{CMU Sans Serif}
+%	\newfontfamily\cyrillicfontsf{CMU Sans Serif}
+%}{}
+%
+%% Microsoft Fonts (1)
+%\ifnumequal{\value{fontfamily}}{1}{
+%	\setmonofont{Courier New}
+%	\newfontfamily\cyrillicfonttt{Courier New}
+%	\defaultfontfeatures{Ligatures=TeX}
+%	\setmainfont{Times New Roman}
+%	\newfontfamily\cyrillicfont{Times New Roman}
+%	\setsansfont{Arial}
+%	\newfontfamily\cyrillicfontsf{Arial}
+%}{}
+%
+%% Liberation Fonts (2)
+%\ifnumequal{\value{fontfamily}}{2}{
+%	\setmonofont{LiberationMono}[Scale=0.87]
+%	\newfontfamily\cyrillicfonttt{LiberationMono}[Scale=0.87]
+%	\defaultfontfeatures{Ligatures=TeX}
+%	\setmainfont{LiberationSerif}
+%	\newfontfamily\cyrillicfont{LiberationSerif}
+%	\setsansfont{LiberationSans}
+%	\newfontfamily\cyrillicfontsf{LiberationSans}
+%}{}

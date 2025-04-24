@@ -1,0 +1,42 @@
+% ===========================
+% 📄 PDF И ТИПОГРАФИКА
+% ===========================
+
+\ProvidesPackage{pdf-setup}[2025/04/21 PDF compatibility and typography]
+
+% --- Поддержка копирования кириллицы в PDF ---
+\IfFileExists{cmap.sty}{
+	\RequirePackage{cmap}
+}{}
+
+% --- Гиперссылки ---
+\RequirePackage[
+unicode,
+colorlinks,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+bookmarksnumbered=true,
+bookmarksopen=true,
+bookmarksopenlevel=1,
+pdfauthor={...},
+pdftitle={...},
+pdfkeywords={...}
+]{hyperref}
+
+% --- Микротипографика ---
+\RequirePackage{microtype}
+
+% --- Улучшение переносов и структуры текста ---
+\IfFileExists{impnattypo.sty}{
+	\ifluatex
+	\usepackage[hyphenation, lastparline, nosingleletter]{impnattypo}
+	\else
+	\usepackage[hyphenation, lastparline]{impnattypo}
+	\fi
+}{}
+
+% 📌 Примечания:
+% - cmap помогает корректно копировать русские символы в PDF.
+% - impnattypo повышает читаемость за счёт тонких правок структуры.
+% - hyperref создаёт ссылки на главы, рисунки, библиографию и позволяет создавать оглавление в закладках PDF.
